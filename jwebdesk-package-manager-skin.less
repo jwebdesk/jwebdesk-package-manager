@@ -1,0 +1,29 @@
+[cell=header] { height: 32px; }
+[cell=footer] { height: 20px; }
+[cell=left] { width: 250px; }
+[cell=right] [owner=right].container.center { padding: 0px; }
+
+// Cada elemento del header está separado del anterior por un margen de 10px
+[name=header] {
+    & > * + * { margin-left: 10px; }
+}
+
+// los botones del costado quedan al 100% pero respetando el margen pre establecido por el padre.
+td.container[owner=left] {
+    & > * { display: block; }
+}
+
+// vista de un paquete
+[cell=p_icon]  { width: 70px; }
+[cell=p_title] { height: 70px; }
+div.label[name=title] { margin-top: 20px; }
+[name=p_buttons] {
+    margin-top: 10px;
+    // .button:not([style*="display: none"]):not([style*="display:none"]) + .button { margin-left: 5px; }
+    .button { margin-left: 5px; }
+    .button:first-child { margin-left: 0px; }
+}
+
+
+// [name="pack_layout"] > table > tbody > tr > td[cell] > [child] { padding: 2px !important; }
+
